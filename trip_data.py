@@ -7,8 +7,6 @@ import json
 @dataclass
 class Activity:
     name: str
-    time_start: str
-    time_end: str
     location: str
     category: str
     notes: str = ""
@@ -25,11 +23,9 @@ class DayPlan:
 
 
 CATEGORY_COLORS = {
-    "food": "#E07A5F",
-    "sightseeing": "#81B29A",
-    "adventure": "#F2CC8F",
-    "transport": "#3D405B",
-    "hotel": "#7E8D9B",
+    "to visit": "#E07A5F",
+    "to eat": "#81B29A",
+    "stay": "#7E8D9B",
 }
 
 DRIVE_ROUTE = [
@@ -58,10 +54,9 @@ def get_default_trip():
             city="Tbilisi",
             activities=[
                 Activity(
-                    name="Arrive at Tbilisi airport",
-                    time_start="14:00", time_end="15:30",
-                    location="Tbilisi Airport",
-                    category="transport",
+                    name="blahblah",
+                    location="blahblah",
+                    category="to eat",
                     latitude=41.6692, longitude=44.9547,
                 ),
            ],
@@ -82,8 +77,6 @@ def trip_to_dict(trip_info, days):
                 "activities": [
                     {
                         "name": a.name,
-                        "time_start": a.time_start,
-                        "time_end": a.time_end,
                         "location": a.location,
                         "category": a.category,
                         "notes": a.notes,
