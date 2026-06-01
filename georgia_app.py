@@ -44,12 +44,7 @@ st.sidebar.caption(
 st.sidebar.caption(f"{len(days)} days / {trip_info['travelers']} travelers")
 st.sidebar.markdown("---")
 
-page = st.sidebar.radio("", ["Map", "Itinerary", "Edit", "Export"])
-
-st.sidebar.markdown("---")
-if st.sidebar.button("Save to disk"):
-    save_trip(trip_info, days)
-    st.sidebar.success("Saved.")
+page = st.sidebar.radio("", ["Map", "Itinerary", "Edit"])
 
 
 # MAP
